@@ -1,0 +1,21 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="page-header">
+          <h1>Sentences</h1>
+        </div>
+        <div class="list-group">
+          <a ng-repeat="sentence in vm.sentences"
+             ui-sref="sentences.view({ sentenceId: sentence._id })"
+             class="list-group-item">
+            <h4 class="list-group-item-heading" ng-bind="sentence.puzzle"></h4>
+          </a>
+        </div>
+        <div class="alert alert-warning text-center" ng-if="vm.sentences.$resolved && !vm.sentences.length">
+          No Sentences yet, why don't you <a ui-sref="sentences.create">create one</a>?
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

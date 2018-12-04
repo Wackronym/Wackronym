@@ -5,7 +5,7 @@ var defaultEnvConfig = require('./default');
 module.exports = {
   db: {
     //uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean-dev',
-    uri: 'mongodb://159.203.125.111:27017/mean-dev',
+    uri: 'mongodb://159.203.125.111:27017/mean',
     options: {},
     // Enable mongoose debug mode
     debug: process.env.MONGODB_DEBUG || false
@@ -67,7 +67,7 @@ module.exports = {
       }
     }
   },
-  livereload: false,
+  livereload: true,
   seedDB: {
     seed: process.env.MONGO_SEED === 'true',
     options: {

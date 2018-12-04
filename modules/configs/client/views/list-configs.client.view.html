@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Configs</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="config in vm.configs"
+       ui-sref="configs.view({ configId: config._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="config.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="config.user" ng-bind="config.user.displayName"></span>
+        <span ng-if="!config.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="config.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.configs.$resolved && !vm.configs.length">
+    No Configs yet, why don't you <a ui-sref="configs.create">create one</a>?
+  </div>
+</section>

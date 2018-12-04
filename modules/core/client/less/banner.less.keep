@@ -1,0 +1,64 @@
+// ======
+// Banner
+// ======
+
+.section_banner {
+
+	padding-top: 0px;
+	padding-bottom: 0px;
+	overflow: hidden;
+
+	span {
+        color: #FFFFFF;
+        text-shadow: -2px 2px 2px #000;
+        position: relative;
+        top: -2px;
+        font-size: 1.3em;
+    }
+
+
+	.banner {
+		// Carousel
+		&__carousel {
+			height: auto;
+			width: 100%;
+			// Images 
+			&__img {
+				position: absolute;
+				top: 0; right: 0; bottom: 0; left: 0;
+
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0; right: 0; bottom: 0; left: 0;
+					background-color: transparent;
+				}
+			}
+		}
+		&__header {
+			margin-bottom: 40px !important;
+		}
+		&__subheader {
+			line-height: 1.2 !important;
+			font-size: 20px;
+			height: 160px;
+			max-width: 800px;
+			margin-left: auto;
+			margin-right: auto;
+			text-align: justify;
+		}
+		// iPhone image
+		&__iphone {
+			width: 100%; max-width: 250px;
+			//.center-block();
+		}
+		// Form
+		&__form {
+			margin-top: 25px;
+			padding: 30px;
+			background-color: white;
+			box-shadow: 0 10px 100px 0 fade(black,15%);
+		}
+	}
+
+}

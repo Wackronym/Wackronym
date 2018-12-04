@@ -1,0 +1,30 @@
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 col-sm-12 col-xs-12">
+        <div class="page-header">
+          <h1>{{vm.sentence._id ? 'Edit Sentence' : 'New Sentence'}}</h1>
+        </div>
+
+        <form name="vm.form.sentenceForm" class="form-horizontal" ng-submit="vm.save(vm.form.sentenceForm.$valid)" novalidate>
+          <fieldset>
+            <div class="form-group" show-errors>
+              <label class="control-label" for="puzzle">Puzzle</label>
+              <input name="puzzle" type="text" ng-model="vm.sentence.puzzle" id="puzzle" class="form-control" placeholder="puzzle" required>
+              <div ng-messages="vm.form.sentenceForm.puzzle.$error" role="alert">
+                <p class="help-block error-text" ng-message="required">Sentence puzzle is required.</p>
+              </div>
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-default">{{vm.sentence._id ? 'Update' : 'Create'}}</button>
+            </div>
+            <div ng-show="vm.error" class="text-danger">
+              <strong ng-bind="vm.error"></strong>
+            </div>
+          </fieldset>
+        </form>
+
+      </div>
+    </div>
+  </div>
+</section>
