@@ -14,7 +14,7 @@ module.exports = {
   host: process.env.HOST || '127.0.0.1',
   db: {
     //uri: process.env.MONGOHQ_URL || process.env.MONGODB_URI || 'mongodb://' + (process.env.DB_1_PORT_27017_TCP_ADDR || 'localhost') + '/mean',
-    uri: 'mongodb://159.203.125.111:27017/mean-dev',
+    uri: 'mongodb://159.203.125.111:27017/mean',
     options: {
       /**
       * Uncomment to enable ssl certificate based authentication to mongodb
@@ -80,12 +80,12 @@ module.exports = {
     sandbox: false
   },
   mailer: {
-    from: process.env.MAILER_FROM || 'MAILER_FROM',
+    from: 'postmaster@wackronym.net',
     options: {
-      service: process.env.MAILER_SERVICE_PROVIDER || 'MAILER_SERVICE_PROVIDER',
+          service: 'Mailgun',
       auth: {
-        user: process.env.MAILER_EMAIL_ID || 'MAILER_EMAIL_ID',
-        pass: process.env.MAILER_PASSWORD || 'MAILER_PASSWORD'
+          user: 'postmaster@mg.wackronym.net',
+          pass: '213b4da62d40886aebaf3aa07ba65512-060550c6-4ff8a588'
       }
     }
   },
