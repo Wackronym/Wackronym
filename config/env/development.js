@@ -58,12 +58,12 @@ module.exports = {
     sandbox: true
   },
   mailer: {
-    from: process.env.MAILER_FROM || 'MAILER_FROM',
+    from: 'postmaster@wackronym.net',
     options: {
-      service: process.env.MAILER_SERVICE_PROVIDER || 'MAILER_SERVICE_PROVIDER',
+          service: 'Mailgun',
       auth: {
-        user: process.env.MAILER_EMAIL_ID || 'MAILER_EMAIL_ID',
-        pass: process.env.MAILER_PASSWORD || 'MAILER_PASSWORD'
+          user: 'postmaster@mg.wackronym.net',
+          pass: '213b4da62d40886aebaf3aa07ba65512-060550c6-4ff8a588'
       }
     }
   },
