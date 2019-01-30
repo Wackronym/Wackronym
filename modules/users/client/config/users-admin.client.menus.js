@@ -10,7 +10,7 @@
   // Configuring the Users module
   function menuConfig(menuService) {
     // Set top bar menu items
-    menuService.addMenuItem('topbar', {
+    /*menuService.addMenuItem('topbar', {
       title: 'Users',
       state: 'user',
       type: 'dropdown',
@@ -20,6 +20,6 @@
     menuService.addSubMenuItem('topbar', 'user', {
       title: 'Manage Users',
       state: 'admin.users'
-    });
+    });*/
   }
 }());

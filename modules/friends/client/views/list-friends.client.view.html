@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Friends</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="friend in vm.friends"
+       ui-sref="friends.view({ friendId: friend._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="friend.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="friend.user" ng-bind="friend.user.displayName"></span>
+        <span ng-if="!friend.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="friend.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.friends.$resolved && !vm.friends.length">
+    No Friends yet, why don't you <a ui-sref="friends.create">create one</a>?
+  </div>
+</section>

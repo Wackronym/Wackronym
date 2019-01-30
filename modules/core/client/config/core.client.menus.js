@@ -38,5 +38,41 @@
       title: 'Manage Social Accounts',
       state: 'settings.accounts'
     });
+
+    // ///////////////////////////////////////////// //
+    //
+    // Set top bar menu items
+    menuService.addMenuItem('topbar', {
+      title: 'Admin',
+      state: 'admin',
+      type: 'dropdown',
+      roles: ['admin']
+    });
+
+    // Add the dropdown list item
+    menuService.addSubMenuItem('topbar', 'admin', {
+      title: 'List Configs',
+      state: 'configs.list'
+    });
+
+    // Add the dropdown list item
+    menuService.addSubMenuItem('topbar', 'admin', {
+      title: 'List Packs',
+      state: 'packs.list'
+    });
+
+    // Add the dropdown list item
+    menuService.addSubMenuItem('topbar', 'admin', {
+      title: 'List Sentences',
+      state: 'sentences.list'
+    });
+
+    // Add the dropdown list item
+    menuService.addSubMenuItem('topbar', 'admin', {
+      title: 'Manage Users',
+      state: 'admin.users'
+    });
+
+
   }
 }());

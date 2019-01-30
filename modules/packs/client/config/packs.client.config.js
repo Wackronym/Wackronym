@@ -9,7 +9,7 @@
 
   function menuConfig(menuService) {
     // Set top bar menu items
-    menuService.addMenuItem('topbar', {
+    /*menuService.addMenuItem('topbar', {
       title: 'Packs',
       state: 'packs',
       type: 'dropdown',
@@ -26,6 +26,6 @@
     menuService.addSubMenuItem('topbar', 'packs', {
       title: 'Create Pack',
       state: 'packs.create'
-    });
+    });*/
   }
 }());
