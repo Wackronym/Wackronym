@@ -12,7 +12,7 @@ module.exports = function(app) {
     .get(friends.list)
     .post(friends.create);
 
-  app.route('/api/friends/:friendId').all(friendsPolicy.isAllowed)
+  app.route('/api/friends/:friendId')
     .get(friends.read)
     .put(friends.update)
     .delete(friends.delete);
@@ -20,7 +20,7 @@ module.exports = function(app) {
   // Finish by binding the Friend middleware
   app.param('friendId', friends.friendByID);
 
-  // ///////////////////////////// // pendingToUser
+  // ///////////////////////////// // pendingToUser   .all(friendsPolicy.isAllowed)
   
   app.route('/api/findFriend')
     .get(friends.findFriend);
