@@ -28,7 +28,7 @@ exports.invokeRolesPolicies = function () {
       permissions: ['get', 'post', 'delete']
     }, {
       resources: '/api/friends/:friendId',
-      permissions: ['get']
+      permissions: ['get', 'post', 'delete']
     }]
   }, {
     roles: ['guest'],
