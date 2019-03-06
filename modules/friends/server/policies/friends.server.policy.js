@@ -25,7 +25,7 @@ exports.invokeRolesPolicies = function () {
     roles: ['user'],
     allows: [{
       resources: '/api/friends',
-      permissions: ['get', 'post']
+      permissions: ['get', 'post', 'delete']
     }, {
       resources: '/api/friends/:friendId',
       permissions: ['get']
