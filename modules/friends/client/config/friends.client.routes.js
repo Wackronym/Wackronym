@@ -16,7 +16,7 @@
       })
       .state('friends.list', {
         url: '',
-        templateUrl: 'modules/friends/client/views/list-friends.client.view.html',
+        templateUrl: '/modules/friends/client/views/list-friends.client.view.html',
         controller: 'FriendsListController',
         controllerAs: 'vm',
         data: {
@@ -25,7 +25,7 @@
       })
       .state('friends.create', {
         url: '/create',
-        templateUrl: 'modules/friends/client/views/form-friend.client.view.html',
+        templateUrl: '/modules/friends/client/views/form-friend.client.view.html',
         controller: 'FriendsController',
         controllerAs: 'vm',
         resolve: {
@@ -38,7 +38,7 @@
       })
       .state('friends.edit', {
         url: '/:friendId/edit',
-        templateUrl: 'modules/friends/client/views/form-friend.client.view.html',
+        templateUrl: '/modules/friends/client/views/form-friend.client.view.html',
         controller: 'FriendsController',
         controllerAs: 'vm',
         resolve: {
@@ -51,7 +51,7 @@
       })
       .state('friends.view', {
         url: '/:friendId',
-        templateUrl: 'modules/friends/client/views/view-friend.client.view.html',
+        templateUrl: '/modules/friends/client/views/view-friend.client.view.html',
         controller: 'FriendsController',
         controllerAs: 'vm',
         resolve: {
