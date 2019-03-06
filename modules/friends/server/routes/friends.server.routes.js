@@ -7,12 +7,12 @@ var friendsPolicy = require('../policies/friends.server.policy'),
   friends = require('../controllers/friends.server.controller');
 
 module.exports = function(app) {
-  // Friends Routes
+  // Friends Routes  .all(friendsPolicy.isAllowed)
   app.route('/api/friends')
     .get(friends.list)
     .post(friends.create);
 
-  app.route('/api/friends/:friendId').all(friendsPolicy.isAllowed)
+  app.route('/api/friends/:friendId')
     .get(friends.read)
     .put(friends.update)
     .delete(friends.delete);
