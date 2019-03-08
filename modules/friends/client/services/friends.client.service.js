@@ -9,7 +9,7 @@
   FriendsService.$inject = ['$resource'];
 
   function FriendsService($resource) {
-    return $resource('api/friends/:friendId', {
+    return $resource('/api/friends/:friendId', {
       friendId: '@_id'
     }, {
       update: {
