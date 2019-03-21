@@ -149,7 +149,7 @@ exports.findFriend = function(req, res) {
  */
 exports.pendingFriend = function(req, res) {
   var myId = req.query.myId;
-  Friend.find().or([{ user: myId }, { touser: myId }]).sort('created').select('status profileImageURL').populate('user', 'username displayName').populate('touser', 'username displayName').exec(function(err, friends) {
+  Friend.find({status: 'pending'}).or([{ user: myId }, { touser: myId }]).sort('created').select('status profileImageURL').populate('user', 'username displayName').populate('touser', 'username displayName').exec(function(err, friends) {
     if (err) {
       return res.status(400).send({
         message: errorHandler.getErrorMessage(err)
