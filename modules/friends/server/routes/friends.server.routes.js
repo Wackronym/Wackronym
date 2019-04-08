@@ -27,4 +27,7 @@ module.exports = function(app) {
 
   app.route('/api/pendingFriend')
     .get(friends.pendingFriend);
+
+  app.route('/api/activeFriend')
+    .get(friends.activeFriend);
 };

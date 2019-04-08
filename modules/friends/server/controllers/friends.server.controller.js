@@ -145,7 +145,7 @@ exports.findFriend = function(req, res) {
 };
 
 /**
- * pendingUser
+ * pendingFriend
  */
 exports.pendingFriend = function(req, res) {
   var myId = req.query.myId;
@@ -160,4 +160,19 @@ exports.pendingFriend = function(req, res) {
   });
 };
 
+/**
+ * activeFriend
+ */
+exports.activeFriend = function(req, res) {
+  var myId = req.query.myId;
+  Friend.find({status: 'accept'}).or([{ user: myId }, { touser: myId }]).sort('created').select('status profileImageURL').populate('user', 'username displayName').populate('touser', 'username displayName').exec(function(err, friends) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(friends);
+    }
+  });
+};
 
