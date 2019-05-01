@@ -224,3 +224,53 @@ exports.me = function (req, res) {
 
   res.json(safeUserObject || null);
 };
+
+exports.myId = function (req, res) {
+  var filter = {};
+  filter.username = req.query.username;
+  User.findOne(filter).select('_id status').exec(function(err, user) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(user);
+    }
+  });
+};
+
+exports.mobileEditUser = function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  var conditions = { _id: req.query.user };
+  var update = { firstName: req.query.firstName, lastName: req.query.lastName, displayName: req.query.displayName, email: req.query.email };
+  //var update = { displayName: req.query.displayName, email: req.query.email };
+  var options = { multi: false };
+  User.update(conditions, update, options, callback);
+  function callback (err, numAffected) {
+    if (err) { 
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    };
+    if (numAffected) {
+      res.jsonp({status: true});
+    };
+  }
+};
+
+exports.mobileLogin = function (req, res) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  var filter = { username: req.query.username };
+  User.findOne(filter).exec(function(err, user) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.jsonp(user);
+    }
+  });
+};
+

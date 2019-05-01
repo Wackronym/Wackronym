@@ -210,6 +210,12 @@ exports.reset = function (req, res, next) {
  * Change Password
  */
 exports.changePassword = function (req, res, next) {
+  // CORS ACCESS FIX - Bypassing Express sessions.
+  if (!req.user) {
+    if (req.body.userId) {
+      req.user = { id: req.body.userId };
+    }
+  }
   // Init Variables
   var passwordDetails = req.body;
 
