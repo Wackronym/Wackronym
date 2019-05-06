@@ -240,8 +240,8 @@ exports.myId = function (req, res) {
 };
 
 exports.mobileEditUser = function (req, res) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  console.log(req.query);
+
   var conditions = { _id: req.query.user };
   var update = { firstName: req.query.firstName, lastName: req.query.lastName, displayName: req.query.displayName, email: req.query.email };
   //var update = { displayName: req.query.displayName, email: req.query.email };
