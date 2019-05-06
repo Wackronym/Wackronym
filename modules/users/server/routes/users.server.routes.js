@@ -11,7 +11,7 @@ module.exports = function (app) {
   app.route('/api/users/password').post(users.changePassword);
   app.route('/api/users/picture').post(users.changeProfilePicture);
 
-  app.route('/api/users/mobileEditUser').get(users.mobileEditUser);
+  app.route('/api/users/mobileEditUser').post(users.mobileEditUser);
   app.route('/api/users/mobileLogin').get(users.mobileLogin);
 
   // Finish by binding the user middleware

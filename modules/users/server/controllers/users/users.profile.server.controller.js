@@ -240,10 +240,10 @@ exports.myId = function (req, res) {
 };
 
 exports.mobileEditUser = function (req, res) {
-  console.log(req.query);
+  console.log(req.body);
 
-  var conditions = { _id: req.query.user };
-  var update = { firstName: req.query.firstName, lastName: req.query.lastName, displayName: req.query.displayName, email: req.query.email };
+  var conditions = { _id: req.body.user };
+  var update = { firstName: req.body.firstName, lastName: req.body.lastName, displayName: req.body.displayName, email: req.body.email };
   //var update = { displayName: req.query.displayName, email: req.query.email };
   var options = { multi: false };
   User.update(conditions, update, options, callback);
